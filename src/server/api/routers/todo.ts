@@ -1,6 +1,7 @@
 import { createTRPCRouter, protectedProcedure } from "~/server/api/trpc";
 import { createInput, toggleInput, updateInput } from "~/server/types";
 import { z } from "zod";
+import { TRPCError } from "@trpc/server";
 
 export const todoRouter = createTRPCRouter({
   all: protectedProcedure.query(async ({ ctx }) => {
